@@ -22,7 +22,7 @@ class App extends Component {
     const equalName = this.state.contacts.find(
       el => el.name.toLowerCase() === data.name.toLowerCase()
     );
-    if (equalName) return alert(equalName.name + ' is already in contacts.');
+    if (equalName) {return alert(equalName.name + ' is already in contacts.')};
 
     data.id = nanoid();
     this.setState(prev => ({ contacts: [data, ...prev.contacts] }));
@@ -37,7 +37,7 @@ class App extends Component {
     const { filter, contacts } = this.state;
     const normalizedFilter = filter.toLowerCase();
 
-    return contacts.filter(contact =>
+    return contacts.filter(contact => 
       contact.name.toLowerCase().includes(normalizedFilter)
     );
   };
